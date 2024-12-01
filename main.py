@@ -45,9 +45,9 @@ async def restart_handler(_, m):
 
 
 
-@bot.on_message(filters.command(["upload"]))
+@bot.on_message(filters.command(["allen"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('𝕤ᴇɴᴅ ᴛxᴛ ғɪʟᴇ ⚡️')
+    editable = await m.reply_text('𝕤ᴇɴᴅ ғɪʟᴇ ⚡️')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -120,18 +120,6 @@ async def upload(bot: Client, m: Message):
     await input6.delete(True)
     await editable.delete()
 
-    thumb = input6.text
-    if thumb.startswith("http://") or thumb.startswith("https://"):
-        getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
-        thumb = "thumb.jpg"
-    else:
-        thumb == "no"
-
-    if len(links) == 1:
-        count = 1
-    else:
-        count = int(raw_text)
-
     try:
         for i in range(count - 1, len(links)):
 
@@ -166,7 +154,7 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
+                cc = f'** {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
                 cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
                 if "drive" in url:
                     try:
@@ -193,7 +181,7 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
+                    Show = f"**𝔻𝕠𝕨𝕟𝕝𝕠𝕒𝕕𝕚𝕟𝕘...👇👇**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
