@@ -33,9 +33,9 @@ bot = Client(
     bot_token=BOT_TOKEN)
 
 
-@bot.on_message(filters.command(["start"]))
+@bot.on_message(filters.command(["suru"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"<b>Hello {m.from_user.mention} 👋\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..\n\nUse /stop to stop any ongoing task.</b>")
+    await m.reply_text(f"<b>Hello {m.from_user.mention} 👋\n\n I Am Your **.TXT** Upload That File On Telegram So Obviously If You Want To Use Me First Send Me And Follow Few Steps..\n\nUse /stop to stop any ongoing task.</b>")
 
 
 @bot.on_message(filters.command("stop"))
@@ -47,7 +47,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["upload"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('𝕤ᴇɴᴅ ᴛxᴛ ғɪʟᴇ ⚡️')
+    editable = await m.reply_text('𝕤ᴇɴᴅ ¥⚡️')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -120,13 +120,6 @@ async def upload(bot: Client, m: Message):
     await input6.delete(True)
     await editable.delete()
 
-    thumb = input6.text
-    if thumb.startswith("http://") or thumb.startswith("https://"):
-        getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
-        thumb = "thumb.jpg"
-    else:
-        thumb == "no"
-
     if len(links) == 1:
         count = 1
     else:
@@ -166,7 +159,7 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📼] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
+                cc = f'**Vid_ID (📼):** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
                 cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
                 if "drive" in url:
                     try:
