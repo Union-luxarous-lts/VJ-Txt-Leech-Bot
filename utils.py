@@ -92,9 +92,14 @@ async def progress_bar(current, total, reply, start):
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
             progress_bar = "▰" * completed_length + "▱" * remaining_length
-            
+            <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+    70%
+  </div>
+</div>
             try:
-                await reply.edit(f'<b>\n ╭──Uᴘʟᴏᴀᴅɪɴɢ──╮ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta}') 
+                await reply.edit(f'<b>\n ╭──Uᴘʟᴏᴀᴅɪɴɢ──╮ \n├{progress_bar}|﹝{perc}﹞ \n├Speed » {sp} \n├Processed » {cur}\n├Size - ETA » {tot} - {eta}') 
             except FloodWait as e:
                 time.sleep(e.x)
 
