@@ -1,7 +1,4 @@
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
-
+#Hello
 import time
 import math
 import os
@@ -27,7 +24,7 @@ def hrb(value, digits= 2, delim= "", postfix=""):
     if value is None:
         return None
     chosen_unit = "B"
-    for unit in ("KiB", "MiB", "GiB", "TiB"):
+    for unit in ("KB", "MB", "GB", "TB"):
         if value > 1000:
             value /= 1024
             chosen_unit = unit
