@@ -29,14 +29,14 @@ bot = Client(
     bot_token=BOT_TOKEN)
 
 
-@bot.on_message(filters.command(["Ram"]))
+@bot.on_message(filters.command(["help"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"<b>Hello {m.from_user.mention} 💫\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..\nUse /stop to stop any ongoing task.</b>")
+    await m.reply_text(f"<b>नमः {m.from_user.mention} करोति । \n\n मैं आपकी .TXT फ़ाइल से वीडियो डाउनलोड लिंक के लिए एक बॉट बनाया गया हूं और फिर उस फ़ाइल को टेलीग्राम पर अपलोड करता हूं, इसलिए मूल रूप से यदि आप मुझे उपयोग करना चाहते हैं तो पहले मुझे / decot कमांड भेजें और फिर कुछ चरणों का पालन करें।\nकिसी भी चल रहे कार्य को रोकने के लिए/stop का प्रयोग करें।</b>")
 
 
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
-    await m.reply_text("**Stopped**🚦", True)
+    await m.reply_text("**Stopped**", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
@@ -65,7 +65,7 @@ async def upload(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"**लेक्चर की संख्या=** **{len(links)}**\n\n**कहां से शुरू करना चाहते हैं। भेजें :** **1**")
+    await editable.edit(f"**लेक्चर की संख्या =** **{len(links)}**\n\n**कहां से शुरू करना चाहते हैं। भेजें :** **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
@@ -98,19 +98,7 @@ async def upload(bot: Client, m: Message):
     except Exception:
             res = "UN"
     
-    
-
-    await editable.edit("Type not to run")
-    input3: Message = await bot.listen(editable.chat.id)
-    raw_text3 = input3.text
-    await input3.delete(True)
-    highlighter  = f"️ ⁪⁬⁮⁮⁮"
-    if raw_text3 == 'Robin':
-        MR = highlighter 
-    else:
-        MR = raw_text3
-   
-    await editable.edit("Now send the Thumb url/nExample\n Or if don't want send = no")
+    await editable.edit("Type no")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
