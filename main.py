@@ -35,7 +35,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["Ram"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"<b>Hello {m.from_user.mention} 👋\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..\nUse /stop to stop any ongoing task.</b>")
+    await m.reply_text(f"<b>Hello {m.from_user.mention} 💫\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..\nUse /stop to stop any ongoing task.</b>")
 
 
 @bot.on_message(filters.command("stop"))
@@ -47,7 +47,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["decot"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('𝕤ᴇɴᴅ ₹⚡️')
+    editable = await m.reply_text('फाइल भेजें')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -69,7 +69,7 @@ async def upload(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"**लेक्चर की संख्या** **{len(links)}**\n\n**कहां से शुरू करना चाहते हैं, एक से शुरू** **1**")
+    await editable.edit(f"**लेक्चर की संख्या=** **{len(links)}**\n\n**कहां से शुरू करना चाहते हैं। भेजें :** **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
